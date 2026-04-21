@@ -1,0 +1,61 @@
+.toggle input {
+  display: none;
+}
+
+.switch {
+  width: 40px;
+  height: 18px;
+  background: #2c2c2c;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Circle */
+.circle {
+  width: 14px;
+  height: 14px;
+  background: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  transition: 0.3s;
+}
+
+/* Text */
+.text {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  right: 3px;
+  transition: 0.3s;
+}
+
+/* ON state */
+.toggle input:checked + .switch {
+  background: #0e0e0e;
+}
+
+/* Move circle properly */
+.toggle input:checked + .switch .circle {
+  left: 18px; /* 30 - 10 - padding(2) = ~18 */
+}
+
+/* Text toggle */
+.on {
+  display: none;
+}
+
+.toggle input:checked + .switch .off {
+  display: none;
+}
+
+.toggle input:checked + .switch .on {
+  display: block;
+  left: 4px;
+  right: auto;
+}
